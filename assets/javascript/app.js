@@ -1,4 +1,4 @@
-// Find all bbq locations in Austin, TX
+
 const api_url = "https://developers.zomato.com/api/v2.1/search?q=bbq%2C%20barbecue&lat=40.7128&lon=-74.0060&radius=100000";
 
 $.ajax({
