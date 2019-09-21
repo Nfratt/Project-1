@@ -11,12 +11,13 @@ body{
     font-size: 150%
 }
 #local{
-    background: red;
+    border: solid,black,5px;
     margin-left: 20%;
     margin-right: 20%;
+    
 
 }
-button{margin-left: 5%;
+button{float: right;
 margin-bottom:5% }
 
 #header{
