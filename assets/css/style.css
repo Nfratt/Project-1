@@ -1,6 +1,25 @@
-#content
-{background: red;
-text-align: center;
-margin-left: 5%;
-margin-right: 5%;
-height: 100px;}
+body{
+    background-image: linear-gradient(to bottom right,#80ffff,#99ccff,#9999ff,#cc99ff,#ff66d9,#ff3385, #e600e6,#990099,#4d004d,#000000
+    );
+    height: 1100px;
+}
+#jtron{
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 150%
+}
+#local{
+    background: red;
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+button{margin-left: 5%;
+margin-bottom:5% }
+
+#header{
+    text-align: center;
+    font-size: 200%;
+}
