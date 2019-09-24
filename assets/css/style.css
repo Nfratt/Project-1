@@ -1,26 +1,120 @@
-body{
-    background-image: linear-gradient(to bottom right,#80ffff,#99ccff,#9999ff,#cc99ff,#ff66d9,#ff3385, #e600e6,#990099,#4d004d,#000000
-    );
-    height: 1100px;
-}
-#jtron{
-    margin-right: 5%;
-    margin-left: 5%;
-    margin-top: 5%;
-    font-family: 'Big Shoulders Display', cursive;
-    font-size: 150%
-}
-#local{
-    border: solid,black,5px;
-    margin-left: 20%;
-    margin-right: 20%;
-    
-
-}
-button{float: right;
-margin-bottom:5% }
-
-#header{
+body {
+    font-family: 'Montserrat';
+    font-weight:
+  }
+  
+  #title {
+    background-color: #ff4c68;
+    color: white;
+    height: 600px;
+  }
+  
+  .container-fluid {
+    padding: 3% 15%;
+  }
+  
+  h1 {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1.5;
+  }
+  
+  h3 {
+    font-family: 'Montserrat';
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-weight: 700;
+    font-size: 3rem;
+    font-family: 'Montserrat';
+    line-height: 1.5;
+  }
+  
+  p {
+    color: #8f8f8f;
+  }
+  
+  /* navigation bar */
+  .navbar {
+    padding: 0 0 4.5rem;
+  }
+  
+  .navbar-brand {
+    font-family: 'Ubuntu';
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-item {
+    padding: 0 18px;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+    font-family: 'Montserrat'
+      font-weight: lighter;
+  }
+  
+  /* Download buttons */
+  .download-button {
+    margin: 5% 3% 5% 0;
+  }
+  
+  /* title image */
+  .title-image {
+    width: 60%;
+  }
+  
+  /* features section */
+  #features {
+    padding: 7% 15%;
+  }
+  
+  .feature-box {
     text-align: center;
-    font-size: 200%;
-}
+    padding: 5%;
+  }
+  
+  .icon {
+    color: #ffb5b5;
+    margin-bottom: 1rem;
+  }
+  
+  .icon:hover {
+    color: #ff4c68;
+  }
+  
+  /* testimonial section */
+  #testimonials {
+    padding: 7% 15%;
+    text-align: center;
+    background-color: #ffb5b5;
+    color: #fff;
+  }
+  
+  .testimonial-image {
+    width: 10%;
+    border-radius: 100%;
+    margin: 20px;
+  }
+  
+  
+  #pricing {
+    padding: 100px;
+  }
+  
+  .price-text {
+    font-size: 3rem;
+    line-height: 1.5;
+  }
+  
+  .pricing-column {
+    padding: 3% 2%;
+  }
+  
+  .social-icon {
+    margin: 20px 10px;
+  }
+  
