@@ -30,34 +30,36 @@
     </div>
   </nav>
 
+
+  <!-- logo -->
+<br>
+<div class="container">
+<section style="box-sizing: border-box; width:60%; float:left">
   <div class="container">
       <div class="row">
-        <!-- logo -->
-  </div>
-
-
-  <div class="row">
-    <div class="col-md-8">
-      <div class="col">
-        <p>Showing results for:</p>
-        <!-- location -->
-        city
-      </div>
-      <div class="col">
-        <!-- date -->
-        date      
-      </div>
-    </div>
-    <br>
-      <div id="weather" class="col-md-4">
-        <!-- weather -->
-         weather
-      </div>
+          <div class="card" style="width:100%">
+          <h5 class="card-header"><i>Showing results for:</i></h5>
+          <div class="col-md">
+            <div class="card" style="width:50%">
+              <div class="card-body">
+                <p class="card-text">Where?</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card" style="width:50%">
+              <div class="card-body">
+                <p class="card-text">When?</p>
+              </div>
+            </div>
+          </div>
         </div>
-
+        <br>
+      </div>
+<br>
     <div id="resultsRest" class="row">
         <!-- restaurants -->
-        <div class="card" style="width: 60%">
+        <div class="card" style="width: 100%">
             <h5 class="card-header"><i>Restaurants near you:</i></h5>
             <div class="card-body">
               <!-- api results -->
@@ -69,7 +71,7 @@
       <br>
       <div id="resultsEvents" class="row">
         <!-- events -->
-        <div class="card" style="width: 60%">
+        <div class="card" style="width: 100%">
           <h5 class="card-header"><i>Events near you:</i></h5>
             <div class="card-body">
               <!-- api results -->
@@ -81,7 +83,7 @@
       <br>
       <div id="resultsMovies" class="row">
         <!-- movies -->
-        <div class="card" style="width: 60%">
+        <div class="card" style="width: 100%">
             <h5 class="card-header"><i>Movies playing near you:</i></h5>
             <div class="card-body">
               <!-- api results -->
@@ -91,9 +93,20 @@
           </div>
       </div>
 </div>
-    
+</section>
 
-
+<aside style="box-sizing: border-box; width:40%; float:left">
+<div class="container">
+      <div class="card">
+          <h5 class="card-header"><i>Weather:</i></h5>
+          <!-- weather -->
+          <div class="card-body" id="weatherResults">
+           weather
+        </div>
+    </div>
+  </div>
+</aside>
+</div>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
