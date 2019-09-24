@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
     var location = 'Seymour,Connecticut';  //change to user input once identified
@@ -89,3 +90,4 @@ $(document).ready(function () {
 
 
 });
+
