@@ -14,6 +14,7 @@ $(document).ready(function () {
             "q=" + location + "&units=imperial&appid=" + APIKey;
 
         // Here we run our AJAX call to the OpenWeatherMap API
+        //writing in comment
         $.ajax({
             url: queryURL,
             method: "GET"
