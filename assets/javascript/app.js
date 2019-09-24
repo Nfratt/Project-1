@@ -51,7 +51,7 @@ $(document).ready(function () {
         $.ajax({
             url: queryURL,
             method: "GET"
-        }).then(function (response) {
+        }).then(function (Response) {
 
             var results = response.data._embedded.events;
             for (var i = 0; i < results.length; i++) {
@@ -82,7 +82,7 @@ $(document).ready(function () {
 
 
 $.ajax({
-  url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-21&zip=06901&api_key=jx28yp3s6ukdynup5javhjmn",
+  url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-24&zip=06901&api_key=jx28yp3s6ukdynup5javhjmn",
   method: "GET"
 }).done(handleMovies);
 
