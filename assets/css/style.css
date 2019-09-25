@@ -35,6 +35,9 @@ body {
   p {
     color: #8f8f8f;
   }
+  #title{
+    background-image: linear-gradient(to bottom right,	  #ffe6e6, #ffcccc)
+  }
   
   /* navigation bar */
   .navbar {
@@ -90,7 +93,7 @@ body {
   #testimonials {
     padding: 7% 15%;
     text-align: center;
-    background-color: #ffb5b5;
+    background-image: linear-gradient(to bottom right, #ffe6e6, #e6e6ff,#b3d9ff);
     color: #fff;
   }
   
