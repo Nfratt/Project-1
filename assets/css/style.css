@@ -59,6 +59,9 @@ body {
     font-family: 'Montserrat';
       font-weight: lighter;
   }
+  #nava{
+    color: #e6f2ff;
+  }
   
   /* Download buttons */
   .download-button {
@@ -88,6 +91,7 @@ body {
   .icon:hover {
     color: #ffb3d9;
   }
+
   
   /* testimonial section */
   #testimonials {
