@@ -171,6 +171,23 @@ $(document).ready(function () {
           // console.log(results);
           console.log(myMovie);
           // add movie to DOM
+          var movieDiv = $('<div>');
+            var movieName = $('<p>').append(myMovie.title);
+            var movieGenre = $('<p>').append(myMovie.genres);
+            var movieTheater = $('<p>').append(myMovie.theater);
+            var movieRating = $('<p>').append(myMovie.rating);
+            var showImage = $("<img>");
+              showImage.attr("src", myMovie.poster)
+
+
+            movieDiv.append(movieName);
+            movieDiv.append(movieGenre);
+            movieDiv.append(movieTheater);
+            movieDiv.append(movieRating);
+            movieDiv.append(showImage);
+
+            movieDiv.append($('<hr>'));
+            $('#movieResults').append(movieDiv);
       });
 
   };
