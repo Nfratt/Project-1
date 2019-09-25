@@ -139,7 +139,7 @@ $(document).ready(function () {
 
 
   $.ajax({
-      url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-24&zip=06901&api_key=jx28yp3s6ukdynup5javhjmn",
+      url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-24&zip=06901&api_key=7hx5n3fk8fejujqvtd3xxcpr",
       method: "GET"
   }).done(handleMovies);
 
@@ -154,6 +154,7 @@ $(document).ready(function () {
       myMovie.title = movie.title;
       myMovie.genres = movie.genres[0];
       myMovie.theater = movie.showtimes[0].theatre.name;
+      myMovie.fandango = movie.showtimes[0].ticketURI
 
       // var poster = results[i].preferredImage
       // console.log(poster);
@@ -175,15 +176,19 @@ $(document).ready(function () {
             var movieName = $('<p>').append(myMovie.title);
             var movieGenre = $('<p>').append(myMovie.genres);
             var movieTheater = $('<p>').append(myMovie.theater);
+            var movieDango = $('<p>').append(myMovie.fandango);
+
             var movieRating = $('<p>').append(myMovie.rating);
             var showImage = $("<img>");
               showImage.attr("src", myMovie.poster)
+              movieDango.attr("href",myMovie.fandango)
 
 
             movieDiv.append(movieName);
             movieDiv.append(movieGenre);
             movieDiv.append(movieTheater);
             movieDiv.append(movieRating);
+            movieDiv.append(movieDango);
             movieDiv.append(showImage);
 
             movieDiv.append($('<hr>'));
@@ -193,3 +198,9 @@ $(document).ready(function () {
   };
 
 });
+
+// On click event for start button
+// target the inputs and look at the values
+// zipcode use dot val dot trim
+// variable for the zip code on click zipcode eq zip id val trim
+// function when the api gets called
