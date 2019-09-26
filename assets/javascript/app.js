@@ -177,7 +177,7 @@ $(document).ready(function () {
             var movieGenre = $('<p>').append(myMovie.genres);
             var movieTheater = $('<p>').append(myMovie.theater);
             var movieDango = $('<a href='+myMovie.fandango+'>').append(myMovie.fandango);
-            $(movieDango).html("Buy Now: ");
+            $(movieDango).html("Buy Now ");
 
             var movieRating = $('<p>').append(myMovie.rating);
             var showImage = $("<img>");
