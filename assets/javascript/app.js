@@ -144,7 +144,9 @@ $(document).ready(function () {
                 restCard.append($('<hr>'));
                 $('#restResults').append(restCard);
             };
+
         });
+        
     };
     displayResultsFood();
 
