@@ -69,10 +69,16 @@ body {
   #nava{
     color: #e6f2ff;
   }
-  #mainjumbotron{
-    
+  #page-header {
+    background-image: linear-gradient(to bottom right,   #f039f0,#ff4aa5);
+    padding-right: 5%;
+    padding-left: 5%;
   }
   
+  .card-header {
+    background-color: #ff52c5;
+    color: white;
+  }
   /* Download buttons */
   .download-button {
     margin: 5% 3% 5% 0;
