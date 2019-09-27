@@ -2,15 +2,16 @@
 <html>
 
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <link rel="Stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display&display=swap" rel="stylesheet">
   <link rel="Stylesheet" href="assets/css/style.css">
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-<link rel="manifest" href="assets/images/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="manifest" href="assets/images/site.webmanifest">
   <!-- google font -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900|Ubuntu&display=swap" rel="stylesheet">
   <title>D8nite</title>
@@ -30,7 +31,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
+  <!-- animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 
 <body>
@@ -41,7 +43,7 @@
 
 
       <!-- Nav Bar -->
-      <nav  class="navbar navbar-expand-lg navbar-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark">
 
         <a class="navbar-brand" href="">D8nite</a>
 
@@ -53,64 +55,65 @@
 
           <ul class="navbar-nav ml-auto">
             <li id="nava" class="nav-item">
-              <a id="nava"class="nav-link" href="index.html">Get Started</a>
+              <a id="nava" class="nav-link" href="index.html">Get Started</a>
             </li>
             <li id="nava" class="nav-item">
-              <a id="nava"class="nav-link" href="about.html">About</a>
-            </li>
-            <li id="nava" class="nav-item">
-              <a id="nava" class="nav-link" href="D8nite.html">Contact</a>
+              <a id="nava" class="nav-link" href="about.html">About</a>
             </li>
           </ul>
 
         </div>
       </nav>
+    </div>
 
+    <!-- Title -->
 
-      <!-- Title -->
+    <div class="row">
 
-      <div class="row">
-
-        <div class="col-6">
-          <h1>Exciting new date ideas.</h1>
-          <div id="local" class="container">
-            <div class="row">
-              <div class="col-lg">
-                <form>
-                  <div id="loccity" class="form-group">
-                    <label for="location">City</label>
-                    <input type="name" class="form-control" id="inputLocation" placeholder="City">
-                  </div>
-                  <br>
-                  <div id="loczip" class="form-group">
-                    <label for="location">zip-code</label>
-                    <input type="name" class="form-control" id="zip-code" placeholder= "000000">
-                  </div>
+      <div class="col-6">
+        <h1>Exciting new date ideas.</h1>
+        <div id="local" class="container">
+          <div class="row">
+            <div class="col-lg">
+              <form>
+                <div id="loccity" class="form-group">
+                  <label for="location">City</label>
+                  <input type="name" class="form-control" id="inputLocation" placeholder="City">
+                </div>
+                <br>
+                <div id="loczip" class="form-group">
+                  <label for="location">Zip-code</label>
+                  <input type="name" class="form-control" id="zip-code" placeholder="000000">
+                </div>
+            </div>
+            <div class="col-lg">
+              <div id="locstate" class="form-group">
+                <label for="date">State</label>
+                <input type="zipcode" class="form-control" id="inputLocation" placeholder="State">
               </div>
-              <div class="col-lg">
-                <div id="locstate" class="form-group">
-                  <label for="date">State</label>
-                  <input type="zipcode" class="form-control" id="inputLocation" placeholder="State">
+            </div>
+            <div id="locdate" class="col-lg">
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="inputDate" placeholder="MM/DD/YYYY">
+              </div>
+            </div>
+            <a href="D8nite.html">
+              <div class="col-md">
+                <div class="animated infinite heartBeat delay-1s">
+                  <button id="startbtn" type="button" class="btn btn-dark btn-lg download-button">Start Now</button>
                 </div>
               </div>
-              <div id="locdate" class="col-lg">
-                <div class="form-group">
-                  <label for="date">Date</label>
-                  <input type="date" class="form-control" id="inputDate" placeholder="MM/DD/YYYY">
-                </div>
-              </div>
-              <a href="D8nite.html">
-                <button id="startbtn" type="button" class="btn btn-dark btn-lg download-button">Start Now</button>
-              </a>
-            </div>
+            </a>
+          </div>
 
 
-            <div class="col-6">
+          <div class="col-6">
 
-
-            </div>
 
           </div>
+
+        </div>
   </section>
 
 
@@ -119,20 +122,22 @@
   <section id="features">
     <div class="row">
       <div class="feature-box col-lg-4">
-        <i class="icon fas fa-calendar-check fa-4x"></i>
+        <div class="animated infinite heartBeat delay-1s">
+          <i class="icon fas fa-calendar-check fa-4x"></i></div>
         <h3>Easy to use.</h3>
         <p>Making plans has never been easier. </p>
       </div>
 
       <div class="feature-box col-lg-4">
-        <i class=" icon fas fa-cocktail fa-4x"></i>
-
+        <div class="animated infinite heartBeat delay-1s">
+          <i class=" icon fas fa-cocktail fa-4x"></i></div>
         <h3>Night out.</h3>
         <p>Hit all the hot spots, we link to the best locations.</p>
       </div>
 
       <div class="feature-box col-lg-4">
-        <i class="icon fas fa-heart fa-4x"></i>
+        <div class="animated infinite heartBeat delay-1s">
+          <i class="icon fas fa-heart fa-4x"></i></div>
         <h3>Romance.</h3>
         <p>Find the best date of your life.</p>
       </div>
@@ -155,6 +160,7 @@
     <div id="testimonial-carousel" class="carousel slide" data-ride="false">
       <div class="carousel-inner">
         <div class="carousel-item active container-fluid">
+
           <h2 class="testimonial-text">"I no longer have to worry about planning the perfect date."</h2>
           <!-- <img class="testimonial-image" src="assets/images/becky.jpeg" alt="lady-profile"> -->
           <em>Becky, New York</em>
@@ -164,6 +170,12 @@
             easy."</h2>
           <!-- <img class="testimonial-image" src="assets/images/john.jpg" alt="man-profile"> -->
           <em>John, Los Angeles</em>
+        </div>
+        <div class="carousel-item container-fluid">
+          <h2 class="testimonial-text">"Before D8nite my husband an i would always get so stressed out about createing
+            the perfect date. "</h2>
+          <!-- <img class="testimonial-image" src="assets/images/john.jpg" alt="man-profile"> -->
+          <em>Emily, Boston</em>
         </div>
       </div>
       <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
@@ -188,8 +200,10 @@
 
       <h3 class="big-heading">Find the Best Date of Your Life.</h3>
       <a href="index.html">
-        <button class="download-button btn btn-lg btn-dark" type="button">Back To Top</button>
-        </a>
+        <div class="animated infinite pulse delay-2s">
+          <button id="bcktt" class="download-button btn btn-lg btn-dark" type="button">Back To Top</button>
+          </d>
+      </a>
     </div>
   </section>
 
@@ -198,10 +212,10 @@
 
   <footer class="white-section" id="footer">
     <div class="container-fluid">
-      <i class="social-icon fab fa-facebook-f"></i>
-      <i class="social-icon fab fa-twitter"></i>
-      <i class="social-icon fab fa-instagram"></i>
-      <i class="social-icon fas fa-envelope"></i>
+      <a href="https://www.facebook.com/"><i class="social-icon fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/"><i class="social-icon fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/"><i class="social-icon fab fa-instagram"></i></a>
+      <a href="https://mail.google.com/mail/u/0/#inbox"><i class="social-icon fas fa-envelope"></i></a>
       <p>© Copyright 2019 D8nite</p>
     </div>
   </footer>
