@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="manifest" href="assets/images/site.webmanifest">
   <link rel="Stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="Stylesheet" href="assets/css/style.css">
@@ -32,81 +37,124 @@
 
 
   <!-- logo -->
-<br>
-<div class="container">
-<section style="box-sizing: border-box; width:60%; float:left">
+  <br>
   <div class="container">
-      <div class="row">
+    <section style="box-sizing: border-box; width:60%; float:left">
+      <div class="container">
+        <div class="row">
           <div class="card" style="width:100%">
-          <h5 class="card-header"><i>Showing results for:</i></h5>
-          <div class="col-md">
-            <div class="card" style="width:50%">
-              <div class="card-body">
-                <p class="card-text">Where?</p>
+            <h5 class="card-header"><i>Showing results for:</i></h5>
+            <div class="card-body">
+            <div class="card-group">
+              <div id="userLocation" class="card">
+
               </div>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="card" style="width:50%">
-              <div class="card-body">
-                <p class="card-text">When?</p>
+              <div id="userZip" class="card">
+
+                </div>
+              <div id="userDate" class="card">
+
               </div>
             </div>
           </div>
         </div>
-        <br>
       </div>
-<br>
-    <div id="resultsRest" class="row">
+
+      <br>
+
+      <div id="resultsRest" class="row">
         <!-- restaurants -->
         <div class="card" style="width: 100%">
-            <h5 class="card-header"><i>Restaurants near you:</i></h5>
-            <div class="card-body">
-              <!-- api results -->
-              <div id="restResults"></div>
-              <a href="#" class="card-link">More Suggestions</a>
+          <h5 class="card-header"><i>Restaurants near you:</i></h5>
+          <div class="card-body">
+            <!-- api results -->
+            <div id="restResults">
+              <div class="card-group">
+                <div id="restCard1" class="card">
+
+                </div>
+                <div id="restCard2" class="card">
+
+                </div>
+                <div id="restCard3" class="card">
+
+                </div>
+
+              </div>
             </div>
+            <a href="#" class="card-link">More Suggestions</a>
           </div>
+        </div>
       </div>
+
       <br>
+
       <div id="resultsEvents" class="row">
         <!-- events -->
         <div class="card" style="width: 100%">
           <h5 class="card-header"><i>Events near you:</i></h5>
-            <div class="card-body">
-              <!-- api results -->
-              <div id="eventResults"></div>
-              <a href="#" class="card-link">More Suggestions</a>
+          <div class="card-body">
+            <!-- api results -->
+            <div id="eventResults">
+              <div class="card-group">
+                <div id="eventCard1" class="card">
+
+                </div>
+                <div id="eventCard2" class="card">
+
+                </div>
+                <div id="eventCard3" class="card">
+
+                </div>
+
+              </div>
             </div>
+            <a href="#" class="card-link">More Suggestions</a>
           </div>
+        </div>
       </div>
+
       <br>
+
       <div id="resultsMovies" class="row">
         <!-- movies -->
         <div class="card" style="width: 100%">
-            <h5 class="card-header"><i>Movies playing near you:</i></h5>
-            <div class="card-body">
-              <!-- api results -->
-              <div id="movieResults"></div>
-              <a href="#" class="card-link">More Suggestions</a>
-            </div>
-          </div>
-      </div>
-</div>
-</section>
+          <h5 class="card-header"><i>Movies playing near you:</i></h5>
+          <div class="card-body">
+            <!-- api results -->
+            <div id="movieResults">
+              <div class="card-group">
+                <div id="movieCard1" class="card">
 
-<aside style="box-sizing: border-box; width:40%; float:left">
-<div class="container">
-      <div class="card">
-          <h5 class="card-header"><i>Weather:</i></h5>
-          <!-- weather -->
-          <div class="card-body" id="weatherResults">
-           weather
+                </div>
+                <div id="movieCard2" class="card">
+
+                </div>
+                <div id="movieCard3" class="card">
+
+                </div>
+
+              </div>
+            </div>
+            <a href="#" class="card-link">More Suggestions</a>
+          </div>
         </div>
-    </div>
+      </div>
   </div>
-</aside>
-</div>
+  </section>
+
+  <aside style="box-sizing: border-box; width:40%; float:left">
+    <div class="container">
+      <div class="card">
+        <h5 class="card-header"><i>Weather:</i></h5>
+        <!-- weather -->
+        <div class="card-body" id="weatherResults">
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  </div>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

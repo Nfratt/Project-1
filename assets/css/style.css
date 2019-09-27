@@ -36,13 +36,20 @@ body {
     color: #8f8f8f;
   }
   #title{
-    background-image: linear-gradient(to bottom right,	  #ff66b3, #ff66ff)
+    background-image: linear-gradient(to bottom right,	  #ff66b3, #ff66ff);
+    height:30%;
   }
   
   /* navigation bar */
   .navbar {
     padding: 0 0 4.5rem;
   }
+  #jtron{
+    background-image: radial-gradient(to top left, #ff66ff,#ff66b3);
+    
+  }
+  #abt{color: white;
+  margin: 5%}
   
   .navbar-brand {
     font-family: 'Ubuntu';
@@ -62,6 +69,9 @@ body {
   #nava{
     color: #e6f2ff;
   }
+  #mainjumbotron{
+    
+  }
   
   /* Download buttons */
   .download-button {
@@ -77,6 +87,12 @@ body {
   #features {
     padding: 7% 15%;
   }
+  #startbtn:hover{
+    background-color: white;
+    color: black;
+  }
+  #bcktt:hover{   background-color: white;
+    color: black;}
   
   .feature-box {
     text-align: center;

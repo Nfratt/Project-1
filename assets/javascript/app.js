@@ -82,7 +82,7 @@ $(document).ready(function () {
 
 
 $.ajax({
-  url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-21&zip=06901&api_key=jx28yp3s6ukdynup5javhjmn",
+  url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-26&zip=06901&api_key=jx28yp3s6ukdynup5javhjmn",
   method: "GET"
 }).done(handleMovies);
 
