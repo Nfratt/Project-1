@@ -50,7 +50,7 @@ $(document).ready(function () {
             weatherDiv.append(pTemp);
             weatherDiv.append(pWind);
             weatherDiv.append(pHumidity);
-            $('#weather').append(weatherDiv);
+            $('#weatherResults').append(weatherDiv);
 
         });
 
@@ -87,19 +87,15 @@ $(document).ready(function () {
                 //   var pEventTickets = $('<p>').append(events[i].url);
 
                 var eventCard = $('<div>').addClass('card');
-                var pEventName = $('<h3>').addClass('card-title');
+                var pEventName = $('<h5>').addClass('card-title');
                 pEventName.append(events[i].name);
 
-                var pEventDate = $('<p>').addClass('card-text')
+                var pEventDate = $('<h6>').addClass('card-text')
                 pEventDate.append(events[i].dates.start.localDate);
 
 
                 var pEventVenue = $('<p>').addClass('card-text');
-                pEventVenue.append(events[i]._embedded.venues[0].name);
-
-
-                var pEventCity = $('<p>').addClass('card-text');
-                pEventCity.append(events[i]._embedded.venues[0].city.name);
+                pEventVenue.append(events[i]._embedded.venues[0].name + ' , ' + events[i]._embedded.venues[0].city.name);
 
                 var pEventTickets = $('<a href=' + events[i].url+ '>').addClass('btn btn-primary').text('Get Tickets')
 
@@ -107,7 +103,6 @@ $(document).ready(function () {
                 eventCard.append(pEventName);
                 eventCard.append(pEventDate);
                 eventCard.append(pEventVenue);
-                eventCard.append(pEventCity);
                 eventCard.append(pEventTickets);
                 // eventDiv.append($('<hr>'));
                 $('#eventResults').append(eventCard);
@@ -155,16 +150,11 @@ $(document).ready(function () {
 
 
                 var restCard = $('<div>').addClass('card');
-                var pRestName = $('<h3>').addClass('card-title');
+                var pRestName = $('<h5>').addClass('card-title');
                 pRestName.append(response.restaurants[i].name);
 
-                var pRestAddress = $('<p>').addClass('card-text')
-                pRestAddress.append(response.restaurants[i].address);
-
-
-                var pRestCity = $('<p>').addClass('card-text');
-                pRestCity.append(response.restaurants[i].city);
-
+                var pRestAddress = $('<h6>').addClass('card-text')
+                pRestAddress.append(response.restaurants[i].address + ' , ' + response.restaurants[i].city);
 
                 var pRestPhone = $('<p>').addClass('card-text');
                 pRestPhone.append(response.restaurants[i].phone);
@@ -173,7 +163,7 @@ $(document).ready(function () {
             
                 restCard.append(pRestName);
                 restCard.append(pRestAddress);
-                restCard.append(pRestCity);
+                //restCard.append(pRestCity);
                 restCard.append(pRestPhone);
                 restCard.append(pRestReserve);
                 $('#restResults').append(restCard);
@@ -183,7 +173,7 @@ $(document).ready(function () {
 
     displayResultsFood();
 
-
+//---------------------------------------------------------------------------------------------------------------------------------
 
 
     //   $.ajax({
