@@ -3,6 +3,7 @@ $(document).ready(function () {
 
 
     // var location = 'Seymour,Connecticut';  //change to user input once identified
+    var location = 'Stamford,Connecticut'
     var city = 'Stamford'
     var state = 'CT'
     var startdate = '2019-09-27T00:00:00Z'
@@ -28,13 +29,6 @@ $(document).ready(function () {
 
             var windMPH = Math.floor(response.wind.speed * 2.237);
             var tempF = Math.floor(response.main.temp);
-
-
-            // Transfer content to HTML
-            //  $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-            //  $(".wind").text("Wind Speed: " + response.wind.speed);
-            //  $(".humidity").text("Humidity: " + response.main.humidity);
-            //  $(".temp").text("Temperature (F) " + response.main.temp);
 
             // Log the data in the console as well
             console.log("Temperature (F): " + tempF);
@@ -210,12 +204,15 @@ $(document).ready(function () {
             // console.log(results);
             console.log(myMovie);
             // add movie to DOM
-            var movieDiv = $('<div>');
-            var movieName = $('<p>').append(myMovie.title);
-            var movieGenre = $('<p>').append(myMovie.genres);
-            var movieTheater = $('<p>').append(myMovie.theater);
-            var movieDango = $('<a href=' + myMovie.fandango + '>').append(myMovie.fandango);
-            $(movieDango).html("Buy Now ");
+            var movieDiv = $('<div>').addClass('card');
+            var movieName = $('<h5>').addClass('card-title')
+            movieName.append(myMovie.title);
+            var movieGenre = $('<h6>').addClass('card-text')
+            movieGenre.append(myMovie.genres);
+            var movieTheater = $('<p>').addClass('card-text')
+            movieTheater.append(myMovie.theater);
+            var movieDango = $('<a href=' + myMovie.fandango + '>').addClass('btn btn-primary').attr('id','dangoBtn').text('Buy Now');
+           
 
             var movieRating = $('<p>').append(myMovie.rating);
             var showImage = $("<img>");
@@ -225,16 +222,18 @@ $(document).ready(function () {
 
             movieDiv.append(movieName);
             movieDiv.append(movieGenre);
-            movieDiv.append(movieDango);
+
             movieDiv.append(movieTheater);
             movieDiv.append(movieRating);
 
             movieDiv.append(showImage);
 
-            movieDiv.append($('<hr>'));
+            movieDiv.append(movieDango);
             $('#movieResults').append(movieDiv);
         });
 
     };
 
 });
+
+
