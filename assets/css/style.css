@@ -74,7 +74,9 @@ body {
     padding-right: 5%;
     padding-left: 5%;
   }
-  
+  #h1card{
+    margin-left: 13%;
+  }
   .card-header {
     background-color: #ff52c5;
     color: white;
