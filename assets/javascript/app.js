@@ -207,7 +207,7 @@ $(document).ready(function () {
 
 
     $.ajax({
-        url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-25&zip=06901&api_key=7hx5n3fk8fejujqvtd3xxcpr",
+        url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-25&zip="+zip+"&api_key=7hx5n3fk8fejujqvtd3xxcpr",
         method: "GET"
     }).done(handleMovies);
 
