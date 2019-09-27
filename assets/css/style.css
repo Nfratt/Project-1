@@ -8,6 +8,12 @@ body {
     color: white;
     height: 600px;
   }
+
+  #page-header {
+    background-image: linear-gradient(to bottom right,	 #f039f0,#ff4aa5);
+    padding-right: 5%;
+    padding-left: 5%;
+  }
   
   .container-fluid {
     padding: 3% 15%;
@@ -125,5 +131,8 @@ body {
     margin: 20px 10px;
   }
   
-
+  .card-header {
+    background-color: #ff52c5;
+    color: white;
+  }
  
