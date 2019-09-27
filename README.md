@@ -2,11 +2,11 @@
 Website name: D8nite
 Use: looking for ideas for a date night? Don't know what to do with your new Tinder date? One stop location for weather,restaurants and events.
 
-Group members: 
-Nick Frattaroli 
+Group members:
 Alexis Chisolm
-Zachary Cohen
+Nick Frattaroli 
 Rachael Clark
+Zachary Cohen
 Looks up date time and location 
 Tells the user the local weather 
 Shows the user restraunts in the area 
