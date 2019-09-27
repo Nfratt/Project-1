@@ -8,6 +8,8 @@ $(document).ready(function () {
     var city = urlParams.has("city")? urlParams.get("location"): "";
     var state = urlParams.has("state")? urlParams.get("state"): "";
     var date = urlParams.has("date")? urlParams.get("date"): "";
+    var startdate = urlParams.has("date")? urlParams.get("date"): "";
+    var enddate = urlParams.has("date")? urlParams.get("date"): "";
     var zip = urlParams.has("zip")? urlParams.get("zip"): "";
     $("#startbtn").on("click", function(event) {
         event.preventDefault();
@@ -21,7 +23,7 @@ $(document).ready(function () {
         location = $("#inputLocationCity").val().trim();
         city = location;
         state = $("#inputLocationState").val().trim();
-        date = $("#inputDate").val().trim();
+        startdate = $("#inputDate").val().trim();
         zip = $('#zip-code').val().trim();
         // displayResultsWeather(location, city, state, date, zip);
         // displayResultsEvents(location,city,state,date,zip);
