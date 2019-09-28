@@ -7,8 +7,8 @@ $(document).ready(function () {
         var state = urlParams.has("state") ? urlParams.get("state") : "";
         var date = urlParams.has("date") ? urlParams.get("date") : "";
         console.log(date);
-        var startDate = date + 'T00:00:01Z'
-        var endDate = date + 'T23:59:59Z'
+        var startDate = date + 'T01:01:01Z'
+        var endDate = date + 'T23:00:00Z'
         console.log(startDate);
         console.log(endDate);
 
