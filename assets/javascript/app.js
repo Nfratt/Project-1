@@ -123,9 +123,7 @@ $(document).ready(function () {
     };
 
     function displayResultsFood() {
-
         var queryURL = 'https://opentable.herokuapp.com/api/restaurants?city=' + city + '&state=' + state + '&per_page=5';
-
         // Here we run our AJAX call to the OpenTable API
         $.ajax({
             url: queryURL,
