@@ -33,7 +33,7 @@ $(document).ready(function () {
         state = $("#inputLocationState").val().trim();
         date = $("#inputDate").val().trim();
         zip = $('#zip-code').val().trim();
-      
+
         // displayResultsWeather(location, city, state, date, zip);
         // displayResultsEvents(location,city,state,date,zip);
         // displayResultsFood(location,city,state,date,zip);
