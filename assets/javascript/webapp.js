@@ -24,7 +24,7 @@ $(document).ready(function () {
 
             //Input validation happening here...
             if (state === '' || date === '' || city === '' || zip === '') {
-                var inputError = $('<p>').text('All fields are required');
+                var inputError = $('<p>').addClass('text-white').text('All fields are required');
                 $('#inputError').html(inputError);
             }
             else {
