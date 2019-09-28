@@ -176,4 +176,9 @@ body {
     background-color: #ff52c5;
     color: white;
   }
- 
+  
+  #show {
+    font-size: 1.2rem;
+    font-family: 'Montserrat';
+    color: rgb(155, 14, 160);
+  }
