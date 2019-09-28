@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     var urlParams = new URLSearchParams(window.location.search);
@@ -308,18 +307,17 @@ $(document).ready(function () {
         else {
             // Load the next page
             window.location.href = `D8nite.html?location=${location}&city=${city}&zip=${zip}&date=${date}&state=${state}`;
-
         };
-
     });
 
-    function displayCriteria () {
-        $('#userLocation').html(city + ', ' + state );
+    //Display user input criteria on results page
+    function displayCriteria() {
+        $('#userLocation').html(city + ', ' + state);
         $("#userZip").html(zip);
         $("#userDate").html(date);
     }
-displayCriteria ();
-     
+    displayCriteria();
+
 
     function displayResultsWeather() {
         var APIKey = "166a433c57516f51dfab1f7edaed8413";
@@ -335,7 +333,6 @@ displayCriteria ();
         }).then(function (response) {
 
             // Log the resulting object
-            //console.log(response);
             console.log('-----WEATHER-----')
 
             var windMPH = Math.floor(response.wind.speed * 2.237);
@@ -351,23 +348,18 @@ displayCriteria ();
             var pWind = $('<p>').append("Wind Speed: " + windMPH + 'mph');
             var pHumidity = $('<p>').append("Humidity: " + response.main.humidity + '%');
 
-
             weatherDiv.append(pTemp);
             weatherDiv.append(pWind);
             weatherDiv.append(pHumidity);
             $('#weatherResults').append(weatherDiv);
-
         });
-
     };
-
 
     function displayResultsEvents() {
         // Here we are building the URL we need to query the database
         var queryURL = 'https://app.ticketmaster.com/discovery/v2/events?apikey=R6DhROIJxrsIGyZyaj1qzfCpwqb7IsA9&locale=*&city=' + city + '&stateCode=' + state + '&startDateTime=' + startDate + '&endDateTime=' + endDate
 
         // Here we run our AJAX call to the OpenWeatherMap API
-
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -385,13 +377,6 @@ displayCriteria ();
                 }
                 console.log(events[i].url);
 
-                //   var eventDiv = $('<div>');
-                //   var pEventName = $('<p>').append(events[i].name);
-                //   var pEventDate = $('<p>').append(events[i].dates.start.localDate);
-                //   var pEventVenue = $('<p>').append(events[i]._embedded.venues[0].name);
-                //   var pEventCity = $('<p>').append(events[i]._embedded.venues[0].city.name);
-                //   var pEventTickets = $('<p>').append(events[i].url);
-
                 var eventCard = $('<div>').addClass('card');
                 var pEventName = $('<h5>').addClass('card-title');
                 pEventName.append(events[i].name);
@@ -399,43 +384,26 @@ displayCriteria ();
                 var pEventDate = $('<h6>').addClass('card-text')
                 pEventDate.append(events[i].dates.start.localDate);
 
-
                 var pEventVenue = $('<p>').addClass('card-text');
                 pEventVenue.append(events[i]._embedded.venues[0].name + ' , ' + events[i]._embedded.venues[0].city.name);
 
-                var pEventTickets = $('<a href=' + events[i].url + '>').addClass('btn btn-primary').text('Get Tickets')
-
+                var pEventTickets = $('<a href=' + events[i].url + '>').addClass('btn btnbook btn-primary').text('Get Tickets')
 
                 eventCard.append(pEventName);
                 eventCard.append(pEventDate);
                 eventCard.append(pEventVenue);
                 eventCard.append(pEventTickets);
-                // eventDiv.append($('<hr>'));
                 $('#eventResults').append(eventCard);
             }
 
-
-
-            // } else {
-            //     var eventCard = $('<div>').addClass('card');
-            //     var error = $('<h3>').addClass('card-title');
-            //     error.text('Sorry, no events on this day. Try moving your date to another day.');
-            //     eventCard.append(error);
-            //     $('#eventResults').append(eventCard);
-            // };
-
-
-
         });
     };
-
-
 
     function displayResultsFood() {
 
         var queryURL = 'https://opentable.herokuapp.com/api/restaurants?city=' + city + '&state=' + state + '&per_page=5';
 
-        // Here we run our AJAX call to the OpenWeatherMap API
+        // Here we run our AJAX call to the OpenTable API
         $.ajax({
             url: queryURL,
             method: 'GET'
@@ -451,9 +419,6 @@ displayCriteria ();
                 console.log(response.restaurants[i].phone);
                 console.log(response.restaurants[i].reserve_url);
 
-
-
-
                 var restCard = $('<div>').addClass('card');
                 var pRestName = $('<h5>').addClass('card-title');
                 pRestName.append(response.restaurants[i].name);
@@ -464,11 +429,10 @@ displayCriteria ();
                 var pRestPhone = $('<p>').addClass('card-text');
                 pRestPhone.append(response.restaurants[i].phone);
 
-                var pRestReserve = $('<a href=' + response.restaurants[i].reserve_url + '>').addClass('btn btn-primary').attr('id', 'reserveBtn').text('Reserve Now')
+                var pRestReserve = $('<a href=' + response.restaurants[i].reserve_url + '>').addClass('btn btnbook btn-primary').attr('id', 'reserveBtn').text('Reserve Now')
 
                 restCard.append(pRestName);
                 restCard.append(pRestAddress);
-                //restCard.append(pRestCity);
                 restCard.append(pRestPhone);
                 restCard.append(pRestReserve);
                 $('#restResults').append(restCard);
@@ -477,13 +441,12 @@ displayCriteria ();
     };
 
 
-
-    var apiURL = "http://data.tmsapi.com/v1.1/movies/showings?startDate="+date+"&zip="+zip+"&api_key=2tyrzuxzvmtfheztd5z9fryy";
+    var apiURL = "http://data.tmsapi.com/v1.1/movies/showings?startDate=" + date + "&zip=" + zip + "&api_key=2tyrzuxzvmtfheztd5z9fryy";
     $.ajax({
         url: apiURL,
         method: "GET"
     }).then(handleMovies).catch((req, res, error) => {
-      console.log(error);
+        console.log(error);
     });
 
     function handleMovies(response) {
@@ -493,30 +456,12 @@ displayCriteria ();
         console.log(results);
     }
 
-
-
-
-    // $.ajax({
-    //     url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-25&zip="+zip+"&api_key=7hx5n3fk8fejujqvtd3xxcpr",
-    //     method: "GET"
-    // }).done(handleMovies);
-    //
-    // // function handleMovies(response) {
-    //     var results = response;
-    //     results.forEach(getMovieInfo);
-    //     console.log(results);
-    // }
-
     function getMovieInfo(movie) {
         var myMovie = {};
         myMovie.title = movie.title;
         myMovie.genres = movie.genres[0];
         myMovie.theater = movie.showtimes[0].theatre.name;
         myMovie.fandango = movie.showtimes[0].ticketURI
-
-
-        // var poster = results[i].preferredImage
-        // console.log(poster);
         myMovie.rating = '';
         if (movie.ratings) {
             myMovie.rating = movie.ratings[0].code;
@@ -528,7 +473,6 @@ displayCriteria ();
         }).done(function (resp) {
             var res = resp;
             myMovie.poster = res.Poster;
-            // console.log(results);
             console.log(myMovie);
             // add movie to DOM
             var movieDiv = $('<div>').addClass('card');
@@ -538,14 +482,11 @@ displayCriteria ();
             movieGenre.append(myMovie.genres);
             var movieTheater = $('<p>').addClass('card-text')
             movieTheater.append(myMovie.theater);
-            var movieDango = $('<a href=' + myMovie.fandango + '>').addClass('btn btn-primary').attr('id','dangoBtn').text('Buy Now');
-
+            var movieDango = $('<a href=' + myMovie.fandango + '>').addClass('btn btnbook btn-primary').attr('id', 'dangoBtn').text('Buy Now');
 
             var movieRating = $('<p>').append(myMovie.rating);
             var showImage = $("<img>");
             showImage.attr("src", myMovie.poster)
-            // movieDango.attr("href",myMovie.fandango)
-
 
             movieDiv.append(movieName);
             movieDiv.append(movieGenre);
@@ -557,17 +498,15 @@ displayCriteria ();
 
             movieDiv.append(movieDango);
             $('#movieResults').append(movieDiv);
-          
         });
 
     };
     displayResultsWeather();
-  displayResultsFood();
-  displayResultsEvents();
+    displayResultsFood();
+    displayResultsEvents();
 
- handleMovies();
- handleMovies();
-
+    handleMovies();
+    handleMovies();
 
 });
 
