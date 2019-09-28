@@ -33,7 +33,7 @@ $(document).ready(function () {
         state = $("#inputLocationState").val().trim();
         date = $("#inputDate").val().trim();
         zip = $('#zip-code').val().trim();
-        
+      
         // displayResultsWeather(location, city, state, date, zip);
         // displayResultsEvents(location,city,state,date,zip);
         // displayResultsFood(location,city,state,date,zip);
@@ -101,7 +101,7 @@ $(document).ready(function () {
         var queryURL = 'https://app.ticketmaster.com/discovery/v2/events?apikey=R6DhROIJxrsIGyZyaj1qzfCpwqb7IsA9&locale=*&city=' + city + '&stateCode=' + state + '&startDateTime=' + startDate + '&endDateTime=' + endDate
 
         // Here we run our AJAX call to the OpenWeatherMap API
-        
+
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -212,6 +212,23 @@ $(document).ready(function () {
 
 
 
+    var apiURL = "http://data.tmsapi.com/v1.1/movies/showings?startDate="+date+"&zip="+zip+"&api_key=bdkdrx4f9j4p22xfhn8afxj8";
+    $.ajax({
+        url: apiURL,
+        method: "GET"
+    }).then(handleMovies).catch((req, res, error) => {
+      console.log(error);
+    });
+
+    function handleMovies(response) {
+        var results = response;
+        // debugger;
+        results.forEach(getMovieInfo);
+        console.log(results);
+    }
+
+
+
 
     // $.ajax({
     //     url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-25&zip="+zip+"&api_key=7hx5n3fk8fejujqvtd3xxcpr",
@@ -230,6 +247,7 @@ $(document).ready(function () {
     //     myMovie.genres = movie.genres[0];
     //     myMovie.theater = movie.showtimes[0].theatre.name;
     //     myMovie.fandango = movie.showtimes[0].ticketURI
+
 
     //     // var poster = results[i].preferredImage
     //     // console.log(poster);
@@ -279,6 +297,9 @@ $(document).ready(function () {
     displayResultsWeather();
   displayResultsFood();
   displayResultsEvents();
+
+ handleMovies();
  // handleMovies();
+
 
 });
