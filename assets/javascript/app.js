@@ -1,13 +1,49 @@
 $(document).ready(function () {
 
+  var urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams.get("location"));
+    var location = urlParams.has("location") ? urlParams.get("location"): "";
+
+    // var location = 'Seymour,Connecticut'; //change to user input once identified
+    var city = urlParams.has("city")? urlParams.get("location"): "";
+    var state = urlParams.has("state")? urlParams.get("state"): "";
+    var date = urlParams.has("date")? urlParams.get("date"): "";
+    var startdate = urlParams.has("date")? urlParams.get("date"): "";
+    var enddate = urlParams.has("date")? urlParams.get("date"): "";
+    var zip = urlParams.has("zip")? urlParams.get("zip"): "";
+    $("#startbtn").on("click", function(event) {
+        event.preventDefault();
+
+        // console.log("clicked");
+        // handleMovies(response);
+        // moviePass();
+
+        // console.log(zip);
+
+        location = $("#inputLocationCity").val().trim();
+        city = location;
+        state = $("#inputLocationState").val().trim();
+        startdate = $("#inputDate").val().trim();
+        zip = $('#zip-code').val().trim();
+        // displayResultsWeather(location, city, state, date, zip);
+        // displayResultsEvents(location,city,state,date,zip);
+        // displayResultsFood(location,city,state,date,zip);
+        // handleMovies(location,city,state,date,zip);
+        // getMovieInfo(location,city,state,date,zip);
+
+        // Load the next page
+        window.location.href = `D8nite.html?location=${location}&city=${city}&zip=${zip}&date=${date}&state=${state}`;
+
+        // state = $("inputLocationState").val().trim();
+        // displayResultsEvents();
+        // localStorage.clear();
+        //
+        // // Store all content into localStorage
+        // localStorage.setItem("location", location);
+        // localStorage.setItem("state", state);
 
 
-    // var location = 'Seymour,Connecticut';  //change to user input once identified
-    var location = 'Stamford,Connecticut'
-    var city = 'Stamford'
-    var state = 'CT'
-    var startdate = '2019-09-27T00:00:00Z'
-    var enddate = '2019-10-13T00:00:00Z'
+      });
 
 
     function displayResultsWeather() {
@@ -171,7 +207,7 @@ $(document).ready(function () {
 
 
     $.ajax({
-        url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-25&zip=06901&api_key=7hx5n3fk8fejujqvtd3xxcpr",
+        url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-25&zip="+zip+"&api_key=7hx5n3fk8fejujqvtd3xxcpr",
         method: "GET"
     }).done(handleMovies);
 
@@ -212,7 +248,7 @@ $(document).ready(function () {
             var movieTheater = $('<p>').addClass('card-text')
             movieTheater.append(myMovie.theater);
             var movieDango = $('<a href=' + myMovie.fandango + '>').addClass('btn btn-primary').attr('id','dangoBtn').text('Buy Now');
-           
+
 
             var movieRating = $('<p>').append(myMovie.rating);
             var showImage = $("<img>");
@@ -233,7 +269,9 @@ $(document).ready(function () {
         });
 
     };
+    displayResultsWeather();
+  displayResultsFood();
+  displayResultsEvents();
+  handleMovies();
 
 });
-
-
