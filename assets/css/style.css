@@ -123,12 +123,13 @@ body {
   }
 /* buttons  */
   .btnbook{
-    background-image: linear-gradient(to top right,#ff80bf,#ff3385);
+    background-image: linear-gradient(to top left,#ff80bf, 	 #ff1aff);
     height: 30px;
     width: 75%;
     text-align: center;
     /* margin: 5%; */
-    margin-left: 10%;
+    margin-left: 12%;
+    margin-bottom: 2%;
     
   }
   .card{
