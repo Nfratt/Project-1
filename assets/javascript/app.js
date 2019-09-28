@@ -33,7 +33,7 @@ $(document).ready(function () {
         state = $("#inputLocationState").val().trim();
         date = $("#inputDate").val().trim();
         zip = $('#zip-code').val().trim();
-      
+
         // displayResultsWeather(location, city, state, date, zip);
         // displayResultsEvents(location,city,state,date,zip);
         // displayResultsFood(location,city,state,date,zip);
@@ -234,72 +234,72 @@ $(document).ready(function () {
     //     url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-25&zip="+zip+"&api_key=7hx5n3fk8fejujqvtd3xxcpr",
     //     method: "GET"
     // }).done(handleMovies);
-
+    //
     // // function handleMovies(response) {
     //     var results = response;
     //     results.forEach(getMovieInfo);
     //     console.log(results);
     // }
 
-    // function getMovieInfo(movie) {
-    //     var myMovie = {};
-    //     myMovie.title = movie.title;
-    //     myMovie.genres = movie.genres[0];
-    //     myMovie.theater = movie.showtimes[0].theatre.name;
-    //     myMovie.fandango = movie.showtimes[0].ticketURI
+    function getMovieInfo(movie) {
+        var myMovie = {};
+        myMovie.title = movie.title;
+        myMovie.genres = movie.genres[0];
+        myMovie.theater = movie.showtimes[0].theatre.name;
+        myMovie.fandango = movie.showtimes[0].ticketURI
 
 
-    //     // var poster = results[i].preferredImage
-    //     // console.log(poster);
-    //     myMovie.rating = '';
-    //     if (movie.ratings) {
-    //         myMovie.rating = movie.ratings[0].code;
-    //     }
+        // var poster = results[i].preferredImage
+        // console.log(poster);
+        myMovie.rating = '';
+        if (movie.ratings) {
+            myMovie.rating = movie.ratings[0].code;
+        }
 
-    //     $.ajax({
-    //         url: "http://www.omdbapi.com/?t=" + encodeURI(movie.title) + "&apikey=698e080b",
-    //         method: "GET"
-    //     }).done(function (resp) {
-    //         var res = resp;
-    //         myMovie.poster = res.Poster;
-    //         // console.log(results);
-    //         console.log(myMovie);
-    //         // add movie to DOM
-    //         var movieDiv = $('<div>').addClass('card');
-    //         var movieName = $('<h5>').addClass('card-title')
-    //         movieName.append(myMovie.title);
-    //         var movieGenre = $('<h6>').addClass('card-text')
-    //         movieGenre.append(myMovie.genres);
-    //         var movieTheater = $('<p>').addClass('card-text')
-    //         movieTheater.append(myMovie.theater);
-    //         var movieDango = $('<a href=' + myMovie.fandango + '>').addClass('btn btn-primary').attr('id','dangoBtn').text('Buy Now');
-
-
-    //         var movieRating = $('<p>').append(myMovie.rating);
-    //         var showImage = $("<img>");
-    //         showImage.attr("src", myMovie.poster)
-    //         // movieDango.attr("href",myMovie.fandango)
+        $.ajax({
+            url: "http://www.omdbapi.com/?t=" + encodeURI(movie.title) + "&apikey=698e080b",
+            method: "GET"
+        }).done(function (resp) {
+            var res = resp;
+            myMovie.poster = res.Poster;
+            // console.log(results);
+            console.log(myMovie);
+            // add movie to DOM
+            var movieDiv = $('<div>').addClass('card');
+            var movieName = $('<h5>').addClass('card-title')
+            movieName.append(myMovie.title);
+            var movieGenre = $('<h6>').addClass('card-text')
+            movieGenre.append(myMovie.genres);
+            var movieTheater = $('<p>').addClass('card-text')
+            movieTheater.append(myMovie.theater);
+            var movieDango = $('<a href=' + myMovie.fandango + '>').addClass('btn btn-primary').attr('id','dangoBtn').text('Buy Now');
 
 
-    //         movieDiv.append(movieName);
-    //         movieDiv.append(movieGenre);
+            var movieRating = $('<p>').append(myMovie.rating);
+            var showImage = $("<img>");
+            showImage.attr("src", myMovie.poster)
+            // movieDango.attr("href",myMovie.fandango)
 
-    //         movieDiv.append(movieTheater);
-    //         movieDiv.append(movieRating);
 
-    //         movieDiv.append(showImage);
+            movieDiv.append(movieName);
+            movieDiv.append(movieGenre);
 
-    //         movieDiv.append(movieDango);
-    //         $('#movieResults').append(movieDiv);
-    //     });
+            movieDiv.append(movieTheater);
+            movieDiv.append(movieRating);
 
-    // };
+            movieDiv.append(showImage);
+
+            movieDiv.append(movieDango);
+            $('#movieResults').append(movieDiv);
+        });
+
+    };
     displayResultsWeather();
   displayResultsFood();
   displayResultsEvents();
 
  handleMovies();
- // handleMovies();
+ handleMovies();
 
 
 });
