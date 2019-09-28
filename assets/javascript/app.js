@@ -8,8 +8,16 @@ $(document).ready(function () {
     var city = urlParams.has("city")? urlParams.get("location"): "";
     var state = urlParams.has("state")? urlParams.get("state"): "";
     var date = urlParams.has("date")? urlParams.get("date"): "";
-    var startdate = urlParams.has("date")? urlParams.get("date"): "";
-    var enddate = urlParams.has("date")? urlParams.get("date"): "";
+    console.log(date);
+    var startDate = date + 'T00:00:00Z'
+    var endDate = date + 'T23:59:59Z'
+    console.log(startDate);
+    console.log(endDate);
+
+     // 2019-09-29T20:25:00Z
+    //2020-08-01T14:00:00Z
+    //var startdate = urlParams.has("date")? urlParams.get("date"): "";
+   // var enddate = urlParams.has("date")? urlParams.get("date"): "";
     var zip = urlParams.has("zip")? urlParams.get("zip"): "";
     $("#startbtn").on("click", function(event) {
         event.preventDefault();
@@ -23,8 +31,9 @@ $(document).ready(function () {
         location = $("#inputLocationCity").val().trim();
         city = location;
         state = $("#inputLocationState").val().trim();
-        startdate = $("#inputDate").val().trim();
+        date = $("#inputDate").val().trim();
         zip = $('#zip-code').val().trim();
+
         // displayResultsWeather(location, city, state, date, zip);
         // displayResultsEvents(location,city,state,date,zip);
         // displayResultsFood(location,city,state,date,zip);
@@ -85,13 +94,14 @@ $(document).ready(function () {
         });
 
     };
-    displayResultsWeather();
+
 
     function displayResultsEvents() {
         // Here we are building the URL we need to query the database
-        var queryURL = 'https://app.ticketmaster.com/discovery/v2/events?apikey=R6DhROIJxrsIGyZyaj1qzfCpwqb7IsA9&locale=*&city=' + city + '&stateCode=' + state + '&startDateTime=' + startdate + '&endDateTime=' + enddate
+        var queryURL = 'https://app.ticketmaster.com/discovery/v2/events?apikey=R6DhROIJxrsIGyZyaj1qzfCpwqb7IsA9&locale=*&city=' + city + '&stateCode=' + state + '&startDateTime=' + startDate + '&endDateTime=' + endDate
 
         // Here we run our AJAX call to the OpenWeatherMap API
+
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -153,7 +163,6 @@ $(document).ready(function () {
         });
     };
 
-    displayResultsEvents();
 
 
     function displayResultsFood() {
@@ -201,18 +210,18 @@ $(document).ready(function () {
         });
     };
 
-    displayResultsFood();
 
-
-
-
+    var apiURL = "http://data.tmsapi.com/v1.1/movies/showings?startDate="+date+"&zip="+zip+"&api_key=bdkdrx4f9j4p22xfhn8afxj8";
     $.ajax({
-        url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-25&zip="+zip+"&api_key=7hx5n3fk8fejujqvtd3xxcpr",
+        url: apiURL,
         method: "GET"
-    }).done(handleMovies);
+    }).then(handleMovies).catch((req, res, error) => {
+      console.log(error);
+    });
 
     function handleMovies(response) {
         var results = response;
+        // debugger;
         results.forEach(getMovieInfo);
         console.log(results);
     }
@@ -272,6 +281,6 @@ $(document).ready(function () {
     displayResultsWeather();
   displayResultsFood();
   displayResultsEvents();
-  handleMovies();
+ handleMovies();
 
 });
