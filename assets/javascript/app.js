@@ -8,8 +8,16 @@ $(document).ready(function () {
     var city = urlParams.has("city")? urlParams.get("location"): "";
     var state = urlParams.has("state")? urlParams.get("state"): "";
     var date = urlParams.has("date")? urlParams.get("date"): "";
-    var startdate = urlParams.has("date")? urlParams.get("date"): "";
-    var enddate = urlParams.has("date")? urlParams.get("date"): "";
+    console.log(date);
+    var startDate = date + 'T00:00:00Z'
+    var endDate = date + 'T23:59:59Z'
+    console.log(startDate);
+    console.log(endDate);
+
+     // 2019-09-29T20:25:00Z
+    //2020-08-01T14:00:00Z
+    //var startdate = urlParams.has("date")? urlParams.get("date"): "";
+   // var enddate = urlParams.has("date")? urlParams.get("date"): "";
     var zip = urlParams.has("zip")? urlParams.get("zip"): "";
     $("#startbtn").on("click", function(event) {
         event.preventDefault();
@@ -23,8 +31,9 @@ $(document).ready(function () {
         location = $("#inputLocationCity").val().trim();
         city = location;
         state = $("#inputLocationState").val().trim();
-        startdate = $("#inputDate").val().trim();
+        date = $("#inputDate").val().trim();
         zip = $('#zip-code').val().trim();
+        
         // displayResultsWeather(location, city, state, date, zip);
         // displayResultsEvents(location,city,state,date,zip);
         // displayResultsFood(location,city,state,date,zip);
@@ -85,13 +94,14 @@ $(document).ready(function () {
         });
 
     };
-    displayResultsWeather();
+
 
     function displayResultsEvents() {
         // Here we are building the URL we need to query the database
-        var queryURL = 'https://app.ticketmaster.com/discovery/v2/events?apikey=R6DhROIJxrsIGyZyaj1qzfCpwqb7IsA9&locale=*&city=' + city + '&stateCode=' + state + '&startDateTime=' + startdate + '&endDateTime=' + enddate
+        var queryURL = 'https://app.ticketmaster.com/discovery/v2/events?apikey=R6DhROIJxrsIGyZyaj1qzfCpwqb7IsA9&locale=*&city=' + city + '&stateCode=' + state + '&startDateTime=' + startDate + '&endDateTime=' + endDate
 
         // Here we run our AJAX call to the OpenWeatherMap API
+        
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -153,7 +163,6 @@ $(document).ready(function () {
         });
     };
 
-    displayResultsEvents();
 
 
     function displayResultsFood() {
@@ -201,77 +210,75 @@ $(document).ready(function () {
         });
     };
 
-    displayResultsFood();
 
 
 
+    // $.ajax({
+    //     url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-25&zip="+zip+"&api_key=7hx5n3fk8fejujqvtd3xxcpr",
+    //     method: "GET"
+    // }).done(handleMovies);
 
-    $.ajax({
-        url: "http://data.tmsapi.com/v1.1/movies/showings?startDate=2019-09-25&zip="+zip+"&api_key=7hx5n3fk8fejujqvtd3xxcpr",
-        method: "GET"
-    }).done(handleMovies);
+    // // function handleMovies(response) {
+    //     var results = response;
+    //     results.forEach(getMovieInfo);
+    //     console.log(results);
+    // }
 
-    function handleMovies(response) {
-        var results = response;
-        results.forEach(getMovieInfo);
-        console.log(results);
-    }
+    // function getMovieInfo(movie) {
+    //     var myMovie = {};
+    //     myMovie.title = movie.title;
+    //     myMovie.genres = movie.genres[0];
+    //     myMovie.theater = movie.showtimes[0].theatre.name;
+    //     myMovie.fandango = movie.showtimes[0].ticketURI
 
-    function getMovieInfo(movie) {
-        var myMovie = {};
-        myMovie.title = movie.title;
-        myMovie.genres = movie.genres[0];
-        myMovie.theater = movie.showtimes[0].theatre.name;
-        myMovie.fandango = movie.showtimes[0].ticketURI
+    //     // var poster = results[i].preferredImage
+    //     // console.log(poster);
+    //     myMovie.rating = '';
+    //     if (movie.ratings) {
+    //         myMovie.rating = movie.ratings[0].code;
+    //     }
 
-        // var poster = results[i].preferredImage
-        // console.log(poster);
-        myMovie.rating = '';
-        if (movie.ratings) {
-            myMovie.rating = movie.ratings[0].code;
-        }
-
-        $.ajax({
-            url: "http://www.omdbapi.com/?t=" + encodeURI(movie.title) + "&apikey=698e080b",
-            method: "GET"
-        }).done(function (resp) {
-            var res = resp;
-            myMovie.poster = res.Poster;
-            // console.log(results);
-            console.log(myMovie);
-            // add movie to DOM
-            var movieDiv = $('<div>').addClass('card');
-            var movieName = $('<h5>').addClass('card-title')
-            movieName.append(myMovie.title);
-            var movieGenre = $('<h6>').addClass('card-text')
-            movieGenre.append(myMovie.genres);
-            var movieTheater = $('<p>').addClass('card-text')
-            movieTheater.append(myMovie.theater);
-            var movieDango = $('<a href=' + myMovie.fandango + '>').addClass('btn btn-primary').attr('id','dangoBtn').text('Buy Now');
-
-
-            var movieRating = $('<p>').append(myMovie.rating);
-            var showImage = $("<img>");
-            showImage.attr("src", myMovie.poster)
-            // movieDango.attr("href",myMovie.fandango)
+    //     $.ajax({
+    //         url: "http://www.omdbapi.com/?t=" + encodeURI(movie.title) + "&apikey=698e080b",
+    //         method: "GET"
+    //     }).done(function (resp) {
+    //         var res = resp;
+    //         myMovie.poster = res.Poster;
+    //         // console.log(results);
+    //         console.log(myMovie);
+    //         // add movie to DOM
+    //         var movieDiv = $('<div>').addClass('card');
+    //         var movieName = $('<h5>').addClass('card-title')
+    //         movieName.append(myMovie.title);
+    //         var movieGenre = $('<h6>').addClass('card-text')
+    //         movieGenre.append(myMovie.genres);
+    //         var movieTheater = $('<p>').addClass('card-text')
+    //         movieTheater.append(myMovie.theater);
+    //         var movieDango = $('<a href=' + myMovie.fandango + '>').addClass('btn btn-primary').attr('id','dangoBtn').text('Buy Now');
 
 
-            movieDiv.append(movieName);
-            movieDiv.append(movieGenre);
+    //         var movieRating = $('<p>').append(myMovie.rating);
+    //         var showImage = $("<img>");
+    //         showImage.attr("src", myMovie.poster)
+    //         // movieDango.attr("href",myMovie.fandango)
 
-            movieDiv.append(movieTheater);
-            movieDiv.append(movieRating);
 
-            movieDiv.append(showImage);
+    //         movieDiv.append(movieName);
+    //         movieDiv.append(movieGenre);
 
-            movieDiv.append(movieDango);
-            $('#movieResults').append(movieDiv);
-        });
+    //         movieDiv.append(movieTheater);
+    //         movieDiv.append(movieRating);
 
-    };
+    //         movieDiv.append(showImage);
+
+    //         movieDiv.append(movieDango);
+    //         $('#movieResults').append(movieDiv);
+    //     });
+
+    // };
     displayResultsWeather();
   displayResultsFood();
   displayResultsEvents();
-  handleMovies();
+ // handleMovies();
 
 });
