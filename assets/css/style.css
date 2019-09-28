@@ -135,7 +135,9 @@ body {
 .card{
   margin-top: 5%
 }
-
+#inputError{
+  color: white;
+}
   /* testimonial section */
   #testimonials {
     padding: 7% 15%;
