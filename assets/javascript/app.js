@@ -291,6 +291,9 @@ $(document).ready(function () {
 
             movieDiv.append(movieDango);
             $('#movieResults').append(movieDiv);
+            $('#userLocation').html(city);
+            $("#userZip").html(zip);
+            $("#userDate").html(date);
         });
 
     };
