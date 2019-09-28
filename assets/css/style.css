@@ -121,8 +121,23 @@ body {
   .icon:hover {
     color:#cc66ff;
   }
-
+/* buttons  */
+.btnbook{
+  background-image: linear-gradient(to top left,#ff80bf,   #ff1aff);
+  height: 30px;
+  width: 75%;
+  text-align: center;
+  /* margin: 5%; */
+  margin-left: 12%;
+  margin-bottom: 2%;
   
+}
+.card{
+  margin-top: 5%
+}
+#inputError{
+  color: white;
+}
   /* testimonial section */
   #testimonials {
     padding: 7% 15%;
