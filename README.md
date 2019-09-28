@@ -2,11 +2,11 @@
 Website name: D8nite
 Use: looking for ideas for a date night? Don't know what to do with your new Tinder date? One stop location for weather,restaurants and events.
 
-Group members: 
-Nick Frattaroli 
+Group members:
 Alexis Chisolm
-Zachary Cohen
+Nick Frattaroli 
 Rachael Clark
+Zachary Cohen
 Looks up date time and location 
 Tells the user the local weather 
 Shows the user restraunts in the area 
@@ -18,3 +18,4 @@ bonus : show local movie listings
  
 How to use: give us the city of where your date is going to be. And we'll give you the weather,
 Some suggestions for restaurants, and local events in the area and ,maybe some local movies.
+ https://nfratt.github.io/D8nite/
