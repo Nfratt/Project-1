@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
         var urlParams = new URLSearchParams(window.location.search);
@@ -162,7 +161,9 @@ $(document).ready(function () {
         };
 
 
-        var apiURL = "http://data.tmsapi.com/v1.1/movies/showings?startDate=" + date + "&zip=" + zip + "&api_key=2tyrzuxzvmtfheztd5z9fryy";
+
+        var apiURL = "https://data.tmsapi.com/v1.1/movies/showings?startDate=" + date + "&zip=" + zip + "&api_key=2tyrzuxzvmtfheztd5z9fryy";
+
         $.ajax({
             url: apiURL,
             method: "GET"
@@ -189,8 +190,9 @@ $(document).ready(function () {
             }
 
             $.ajax({
-                url: "http://www.omdbapi.com/?t=" + encodeURI(movie.title) + "&apikey=698e080b",
-                method: "GET"
+
+                url: "https://www.omdbapi.com/?t=" + encodeURI(movie.title) + "&apikey=698e080b",
+ method: "GET"
             }).done(function (resp) {
                 var res = resp;
                 myMovie.poster = res.Poster;
