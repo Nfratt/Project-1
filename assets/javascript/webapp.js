@@ -105,7 +105,7 @@ $(document).ready(function () {
 
                     var pEventDate = $('<h6>').addClass('card-text')
                     pEventDate.append(events[i].dates.start.localDate);
-                    
+
                     var pEventVenue = $('<p>').addClass('card-text');
                     pEventVenue.append(events[i]._embedded.venues[0].name + ' , ' + events[i]._embedded.venues[0].city.name);
 
@@ -145,10 +145,10 @@ $(document).ready(function () {
 
                     var pRestAddress = $('<h6>').addClass('card-text')
                     pRestAddress.append(response.restaurants[i].address + ' , ' + response.restaurants[i].city);
-                    
+
                     var pRestPhone = $('<p>').addClass('card-text');
                     pRestPhone.append(response.restaurants[i].phone);
-                    
+
                     var pRestReserve = $('<a href=' + response.restaurants[i].reserve_url + '>').addClass('btn btnbook btn-primary').attr('id', 'reserveBtn').text('Reserve Now')
 
                     restCard.append(pRestName);
@@ -161,7 +161,9 @@ $(document).ready(function () {
         };
 
 
+
         var apiURL = "https://data.tmsapi.com/v1.1/movies/showings?startDate=" + date + "&zip=" + zip + "&api_key=bdkdrx4f9j4p22xfhn8afxj8";
+
         $.ajax({
             url: apiURL,
             method: "GET"
@@ -188,8 +190,10 @@ $(document).ready(function () {
             }
 
             $.ajax({
+
                 url: "https://www.omdbapi.com/?t=" + encodeURI(movie.title) + "&apikey=698e080b",
                 method: "GET"
+
             }).done(function (resp) {
                 var res = resp;
                 myMovie.poster = res.Poster;
@@ -224,7 +228,7 @@ $(document).ready(function () {
         displayResultsWeather();
         displayResultsFood();
         displayResultsEvents();
-        
+
         handleMovies();
         handleMovies();
 
