@@ -1,32 +1,21 @@
+
 $(document).ready(function () {
 
-  var urlParams = new URLSearchParams(window.location.search);
+    var urlParams = new URLSearchParams(window.location.search);
     console.log(urlParams.get("location"));
-    var location = urlParams.has("location") ? urlParams.get("location"): "";
-
-    // var location = 'Seymour,Connecticut'; //change to user input once identified
-    var city = urlParams.has("city")? urlParams.get("location"): "";
-    var state = urlParams.has("state")? urlParams.get("state"): "";
-    var date = urlParams.has("date")? urlParams.get("date"): "";
+    var location = urlParams.has("location") ? urlParams.get("location") : "";
+    var city = urlParams.has("city") ? urlParams.get("location") : "";
+    var state = urlParams.has("state") ? urlParams.get("state") : "";
+    var date = urlParams.has("date") ? urlParams.get("date") : "";
     console.log(date);
-    var startDate = date + 'T00:00:00Z'
+    var startDate = date + 'T00:00:01Z'
     var endDate = date + 'T23:59:59Z'
     console.log(startDate);
     console.log(endDate);
 
-     // 2019-09-29T20:25:00Z
-    //2020-08-01T14:00:00Z
-    //var startdate = urlParams.has("date")? urlParams.get("date"): "";
-   // var enddate = urlParams.has("date")? urlParams.get("date"): "";
-    var zip = urlParams.has("zip")? urlParams.get("zip"): "";
-    $("#startbtn").on("click", function(event) {
+    var zip = urlParams.has("zip") ? urlParams.get("zip") : "";
+    $("#startbtn").on("click", function (event) {
         event.preventDefault();
-
-        // console.log("clicked");
-        // handleMovies(response);
-        // moviePass();
-
-        // console.log(zip);
 
         location = $("#inputLocationCity").val().trim();
         city = location;
@@ -34,25 +23,25 @@ $(document).ready(function () {
         date = $("#inputDate").val().trim();
         zip = $('#zip-code').val().trim();
 
-        // displayResultsWeather(location, city, state, date, zip);
-        // displayResultsEvents(location,city,state,date,zip);
-        // displayResultsFood(location,city,state,date,zip);
-        // handleMovies(location,city,state,date,zip);
-        // getMovieInfo(location,city,state,date,zip);
+        //Input validation happening here...
+        if (state === '' || date === '' || city === '') {
+            var inputError = $('<p>').text('All fields are required');
+            $('#inputError').html(inputError);
+        }
+        else {
+            // Load the next page
+            window.location.href = `D8nite.html?location=${location}&city=${city}&zip=${zip}&date=${date}&state=${state}`;
 
-        // Load the next page
-        window.location.href = `D8nite.html?location=${location}&city=${city}&zip=${zip}&date=${date}&state=${state}`;
+        };
 
-        // state = $("inputLocationState").val().trim();
-        // displayResultsEvents();
-        // localStorage.clear();
-        //
-        // // Store all content into localStorage
-        // localStorage.setItem("location", location);
-        // localStorage.setItem("state", state);
+    });
 
-
-      });
+    function displayCriteria () {
+        $('#userLocation').html(city + ', ' + state );
+        $("#userZip").html(zip);
+        $("#userDate").html(date);
+    }
+displayCriteria ();
 
 
     function displayResultsWeather() {
@@ -212,7 +201,7 @@ $(document).ready(function () {
 
 
 
-    var apiURL = "http://data.tmsapi.com/v1.1/movies/showings?startDate="+date+"&zip="+zip+"&api_key=bdkdrx4f9j4p22xfhn8afxj8";
+    var apiURL = "http://data.tmsapi.com/v1.1/movies/showings?startDate="+date+"&zip="+zip+"&api_key=2tyrzuxzvmtfheztd5z9fryy";
     $.ajax({
         url: apiURL,
         method: "GET"
@@ -291,9 +280,7 @@ $(document).ready(function () {
 
             movieDiv.append(movieDango);
             $('#movieResults').append(movieDiv);
-            $('#userLocation').html(city);
-            $("#userZip").html(zip);
-            $("#userDate").html(date);
+
         });
 
     };

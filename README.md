@@ -12,9 +12,12 @@ Tells the user the local weather
 Shows the user restraunts in the area 
 And events in the area
 
-Apis planned on being used: Zomato,open weather map/accuweather, ticketmaster
+APIs used Open tabel (https://opentable.herokuapp.com/),open weather map, ticketmaster,gracenote,OMDB
 
 bonus : show local movie listings 
+extra technologies uesd: animate css,bootstrap 
+momentjs,
+
  
 How to use: give us the city of where your date is going to be. And we'll give you the weather,
 Some suggestions for restaurants, and local events in the area and ,maybe some local movies.

@@ -121,8 +121,25 @@ body {
   .icon:hover {
     color:#cc66ff;
   }
-
+/* buttons  */
+.btnbook{
+  background-image: linear-gradient(to top left,#ff80bf,   #ff1aff);
+  height: 30px;
+  width: 75%;
+  text-align: center;
+  /* margin: 5%; */
+  margin-left: 12%;
+  margin-bottom: 2%;
+  border-style:solid;
+  border: #f039f0
   
+}
+.card{
+  margin-top: 5%
+}
+#inputError{
+  color: white;
+}
   /* testimonial section */
   #testimonials {
     padding: 7% 15%;
@@ -136,7 +153,17 @@ body {
     border-radius: 100%;
     margin: 20px;
   }
-  
+  /* about image */
+  #team{height: 25%;
+  width: 20%;
+clear: left;
+float: right;
+margin-right: 5%;
+margin-bottom: 10%;
+margin-left: 5%;
+
+
+  }
   
   #pricing {
     padding: 100px;
@@ -159,4 +186,9 @@ body {
     background-color: #ff52c5;
     color: white;
   }
- 
+  
+  #show {
+    font-size: 1.2rem;
+    font-family: 'Montserrat';
+    color: rgb(155, 14, 160);
+  }
