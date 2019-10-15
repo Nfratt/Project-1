@@ -12,7 +12,8 @@ Tells the user the local weather
 Shows the user restraunts in the area 
 And events in the area
 
-APIs used Open tabel (https://opentable.herokuapp.com/),open weather map, ticketmaster,gracenote,OMDB
+APIs used Open tabel (opentable.herokuapp.com/),
+open weather map, ticketmaster,gracenote,OMDB
 
 bonus : show local movie listings 
 extra technologies uesd: animate css,bootstrap 
