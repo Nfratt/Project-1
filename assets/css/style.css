@@ -192,3 +192,8 @@ margin-left: 5%;
     font-family: 'Montserrat';
     color: rgb(155, 14, 160);
   }
+  .poster{
+  width:50%;
+  height:100%;
+  margin-bottom: 5%;
+}
