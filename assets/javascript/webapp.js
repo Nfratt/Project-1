@@ -209,7 +209,7 @@ $(document).ready(function () {
                 var movieDango = $('<a href=' + myMovie.fandango + '>').addClass('btn btnbook btn-primary').attr('id', 'dangoBtn').text('Buy Now');
 
                 var movieRating = $('<p>').append(myMovie.rating);
-                var showImage = $("<img>");
+                var showImage = $(" <img class='poster'>");
                 showImage.attr("src", myMovie.poster)
 
                 movieDiv.append(movieName);
