@@ -142,6 +142,8 @@ $(document).ready(function () {
                     var restCard = $('<div>').addClass('card');
                     var pRestName = $('<h5>').addClass('card-title');
                     pRestName.append(response.restaurants[i].name);
+                    let pRestimg =$('img').addClass('img');
+                    pRestimg.append(response.restaurants[i].image_url.image);
 
                     var pRestAddress = $('<h6>').addClass('card-text')
                     pRestAddress.append(response.restaurants[i].address + ' , ' + response.restaurants[i].city);
@@ -152,6 +154,7 @@ $(document).ready(function () {
                     var pRestReserve = $('<a href=' + response.restaurants[i].reserve_url + '>').addClass('btn btnbook btn-primary').attr('id', 'reserveBtn').text('Reserve Now')
 
                     restCard.append(pRestName);
+                    restCard.append(pRestimg);
                     restCard.append(pRestAddress);
                     restCard.append(pRestPhone);
                     restCard.append(pRestReserve);
