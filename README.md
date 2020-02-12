@@ -2,6 +2,12 @@
 Website name: D8nite
 Use: looking for ideas for a date night? Don't know what to do with your new Tinder date? One stop location for weather,restaurants and events.
 
+In order to use this app you must get api keys for the following services:
+Open weather map
+Ticketmaster
+Gracenote
+OMDB
+
 Group members:
 Alexis Chisolm,
 Nick Frattaroli, 
