@@ -42,7 +42,8 @@ $(document).ready(function () {
         displayCriteria();
 
         function displayResultsWeather() {
-            let APIKey = "166a433c57516f51dfab1f7edaed8413";
+//                 process.env.Weather_API
+            let APIKey = "YOUR_KEY_HERE";
 
             // Here we are building the URL we need to query the database
             let queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
@@ -78,8 +79,9 @@ $(document).ready(function () {
         };
 
         function displayResultsEvents() {
+//                 const APIkey= process.env.Events_API
             // Here we are building the URL we need to query the database
-            let queryURL = 'https://app.ticketmaster.com/discovery/v2/events?apikey=R6DhROIJxrsIGyZyaj1qzfCpwqb7IsA9&locale=*&city=' + city + '&stateCode=' + state + '&startDateTime=' + startDate + '&endDateTime=' + endDate
+            let queryURL = 'https://app.ticketmaster.com/discovery/v2/events?apikey=YOUR_KEY_HERE&locale=*&city=' + city + '&stateCode=' + state + '&startDateTime=' + startDate + '&endDateTime=' + endDate
 
             // Here we run our AJAX call to the OpenWeatherMap API
             $.ajax({
@@ -163,9 +165,9 @@ $(document).ready(function () {
             });
         };
 
+// const APIKEY= process.env.TMS_API
 
-
-        let apiURL = "https://data.tmsapi.com/v1.1/movies/showings?startDate=" + date + "&zip=" + zip + "&api_key=bdkdrx4f9j4p22xfhn8afxj8";
+        let apiURL = "https://data.tmsapi.com/v1.1/movies/showings?startDate=" + date + "&zip=" + zip + "&api_key=YOUR_KEY_HERE";
 
         $.ajax({
             url: apiURL,
@@ -181,7 +183,8 @@ $(document).ready(function () {
             console.log(results);
         }
 
-        function getMovieInfo(movie) {
+        function getMovieInfo(movie) 
+//         const APIkey= process.env.OMDB_API
             let myMovie = {};
             myMovie.title = movie.title;
             myMovie.genres = movie.genres[0];
@@ -194,7 +197,7 @@ $(document).ready(function () {
 
             $.ajax({
 
-                url: "https://www.omdbapi.com/?t=" + encodeURI(movie.title) + "&apikey=698e080b",
+                url: "https://www.omdbapi.com/?t=" + encodeURI(movie.title) + "&apikey=YOUR_KEY_HERE",
                 method: "GET"
 
             }).done(function (resp) {
