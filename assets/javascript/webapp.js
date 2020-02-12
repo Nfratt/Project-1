@@ -42,6 +42,7 @@ $(document).ready(function () {
         displayCriteria();
 
         function displayResultsWeather() {
+//                 process.env.Weather_API
             let APIKey = "YOUR_KEY_HERE";
 
             // Here we are building the URL we need to query the database
@@ -78,6 +79,7 @@ $(document).ready(function () {
         };
 
         function displayResultsEvents() {
+//                 const APIkey= process.env.Events_API
             // Here we are building the URL we need to query the database
             let queryURL = 'https://app.ticketmaster.com/discovery/v2/events?apikey=YOUR_KEY_HERE&locale=*&city=' + city + '&stateCode=' + state + '&startDateTime=' + startDate + '&endDateTime=' + endDate
 
@@ -163,7 +165,7 @@ $(document).ready(function () {
             });
         };
 
-
+// const APIKEY= process.env.TMS_API
 
         let apiURL = "https://data.tmsapi.com/v1.1/movies/showings?startDate=" + date + "&zip=" + zip + "&api_key=YOUR_KEY_HERE";
 
@@ -181,7 +183,8 @@ $(document).ready(function () {
             console.log(results);
         }
 
-        function getMovieInfo(movie) {
+        function getMovieInfo(movie) 
+//         const APIkey= process.env.OMDB_API
             let myMovie = {};
             myMovie.title = movie.title;
             myMovie.genres = movie.genres[0];
